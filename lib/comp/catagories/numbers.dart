@@ -165,7 +165,7 @@ class Numbers {
         {"Number": "21", "Pronunciation": "इक्कीस (ikkis)"},
         {"Number": "22", "Pronunciation": "बाईस (baais)"},
         {"Number": "23", "Pronunciation": "तेईस (teis)"},
-        {"Number": "24", "Pronunciation": "चौबीस (chaubis)"},
+        {"Number": "24", "Pronunciation": "  (chaubis)"},
         {"Number": "25", "Pronunciation": "पच्चीस (pachis)"},
         {"Number": "26", "Pronunciation": "छब्बीस (chhabbis)"},
         {"Number": "27", "Pronunciation": "सत्ताईस (sattais)"},

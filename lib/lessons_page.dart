@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:word_master/comp/catagories.dart';
+import 'package:word_master/comp/catagories/mapper/color.dart';
+import 'package:word_master/comp/catagories/mapper/food_mapper.dart';
+import 'package:word_master/comp/catagories/mapper/greeting_mapper.dart';
 import 'package:word_master/comp/catagories/mapper/number_mapper.dart';
+import 'package:word_master/comp/catagories/mapper/time_mapper.dart';
 import 'package:word_master/comp/language_model.dart';
 import 'package:word_master/comp/quizes/quiz_mapper.dart';
 import 'package:word_master/lessons/numbers.dart';
 import 'package:word_master/lessons/quiz.dart';
+import 'package:word_master/lessons/weather.dart';
+
+import 'comp/catagories/mapper/familiy_mapper.dart';
+import 'comp/catagories/mapper/weather_mapper.dart';
+import 'lessons/Food.dart';
+import 'lessons/color.dart';
+import 'lessons/family.dart';
+import 'lessons/greetings.dart';
+import 'lessons/time.dart';
 
 class Lessons extends StatelessWidget {
   final Language language;
@@ -83,7 +96,68 @@ class Lessons extends StatelessWidget {
                                     numbers:
                                         NumberMapper().mapping[language.name]!,
                                   )));
-                    } else {
+                    } else if (catagories[index]["Name"] ==
+                        "Greetings and Introductions") {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Greeting(
+                                    greetings:
+                                        GreetingMapper().mapping["greetings"]!,
+                                    converted: GreetingMapper()
+                                        .mapping[language.name]!,
+                                  )));
+                    } else if (catagories[index]["Name"] ==
+                        "Family and Relationships") {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => FamilyAndRelationShips(
+                                    family:
+                                        FamilyMapper().mapping[language.name]!,
+                                  )));
+                    }
+                    else if (catagories[index]["Name"] ==
+                        "Food and Dining") {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => FoodAndDining(
+                                    food:
+                                        FoodMapper().mapping[language.name]!,
+                                  )));
+                    }
+                    else if (catagories[index]["Name"] ==
+                        "Weather and Seasons") {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Weather(
+                                    weather:
+                                        WeatherMapper().mapping[language.name]!,
+                                  )));
+                    }
+                    else if (catagories[index]["Name"] ==
+                        "Time and Dates") {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => TimeAndDate(
+                                    time:
+                                        TimeMapper().mapping[language.name]!,
+                                  )));
+                    }
+                    else if (catagories[index]["Name"] ==
+                        "Colors and Shapes") {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ColorAndShapes(
+                                    color:
+                                        ColorMapper().mapping[language.name]!,
+                                  )));
+                    }  
+                    else {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
