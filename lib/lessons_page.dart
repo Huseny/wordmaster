@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:word_master/comp/catagories.dart';
 import 'package:word_master/comp/catagories/mapper/number_mapper.dart';
+import 'package:word_master/comp/catagories/mapper/work.dart';
 import 'package:word_master/comp/language_model.dart';
 import 'package:word_master/comp/quizes/quiz_mapper.dart';
 import 'package:word_master/lessons/numbers.dart';
 import 'package:word_master/lessons/quiz.dart';
+import 'package:word_master/lessons/work_and_career.dart';
+
+import 'comp/catagories/mapper/education_mapper.dart';
+import 'lessons/education.dart';
 
 class Lessons extends StatelessWidget {
   final Language language;
@@ -82,6 +87,25 @@ class Lessons extends StatelessWidget {
                               builder: (context) => NumBer(
                                     numbers:
                                         NumberMapper().mapping[language.name]!,
+                                  )));
+                    } else if (catagories[index]["Name"] ==
+                        "Education and Academics") {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Education(
+                                    converted: EducationMapper()
+                                        .mapping[language.name]!,
+                                    educations:
+                                        EducationMapper().mapping["educations"],
+                                  )));
+                    } else if (catagories[index]["Name"] ==
+                        "Work and Careers") {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => WorkandCareer(
+                                    work: WorkMapper().mapping[language.name],
                                   )));
                     } else {
                       Navigator.push(
