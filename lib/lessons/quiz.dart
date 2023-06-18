@@ -48,7 +48,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 answered = false;
               });
             },
-            scrollDirection: Axis.vertical,
+            physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,

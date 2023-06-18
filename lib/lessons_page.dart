@@ -6,6 +6,8 @@ import 'package:word_master/comp/quizes/quiz_mapper.dart';
 import 'package:word_master/lessons/numbers.dart';
 import 'package:word_master/lessons/quiz.dart';
 
+import 'lessons/translator.dart';
+
 class Lessons extends StatelessWidget {
   final Language language;
   Lessons({super.key, required this.language});
@@ -82,6 +84,13 @@ class Lessons extends StatelessWidget {
                               builder: (context) => NumBer(
                                     numbers:
                                         NumberMapper().mapping[language.name]!,
+                                  )));
+                    } else if (catagories[index]["Name"] == "Translator") {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Translator(
+                                    language: language,
                                   )));
                     } else {
                       Navigator.push(
